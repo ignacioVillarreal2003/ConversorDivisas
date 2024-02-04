@@ -1,7 +1,8 @@
 import  requests
+import os
 
-API_KEY = 'e85f42056f315e335720edb8'
-URL = 'https://v6.exchangerate-api.com/v6/e85f42056f315e335720edb8/latest/USD'
+API_KEY = os.environ.get('EXCHANGE_RATE_API_KEY')
+URL = f'https://v6.exchangerate-api.com/v6/{API_KEY}/latest/USD'
 
 def get_Tasas():
     response = requests.get(URL)
